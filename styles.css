@@ -1,0 +1,118 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden; /* Previene el desbordamiento horizontal */
+    background-color: transparent; /* Color de fondo general */
+}
+
+@media (max-width: 768px) {
+
+    @font-face {
+        font-family: "urwgroteskscreg";
+        src: url("font/urwgroteskscreg.ttf") format("truetype");
+    }
+
+    body {
+        font-family: "urwgroteskscreg", Arial, sans-serif;
+        background-image: url("images/fondo/fondo_menu.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-size: 1rem; 
+        margin: 0;
+    }
+
+    .header {
+        text-align: center;
+        color: red;
+        text-shadow: 0 0 5px white;
+        font-size: 2.5rem; /* Usa rem para ajustar automáticamente en móviles */
+    }
+
+    .list {
+        margin-top: 2.5rem;
+        padding: 0;
+        list-style-type: none;
+        text-shadow: 0 0 6px white;
+    }
+
+    .list li {
+        display: flex; /* uso flexbox para alinear los elementos de la lista */
+        justify-content: space-between; /* Espacio entre el nombre del trago y el precio */
+        align-items: center;
+        padding: 0.625rem 0;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        text-shadow: white;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid white;
+        margin: 0.625rem 3rem 0 3rem;
+        text-shadow: 0 0 6px white;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 1.25rem;
+        text-shadow: 0 0 6px white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    footer img {
+        height: 50%;
+        max-width: 6,25rem;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+}
+
+#slider {
+    width: 100%;
+    overflow: hidden; /* Oculta las imágenes fuera del área visible */
+    position: relative;
+}
+
+#slider ul {
+    display: flex;
+    animation: scroll 65s linear infinite; /* Animación continua */
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    list-style: none;
+}
+
+#slider ul li {
+    flex: 0 0 auto; /* Evita que los elementos se redimensionen */
+}
+
+#slider img {
+    width: 150px;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de desplazamiento automático */
+@keyframes scroll {
+    0% {
+        transform: translateX(50%); /* Empieza en el punto inicial */
+    }
+    100% {
+        transform: translateX(-100% + 10px); /* Desplaza la mitad del ancho total */
+    }
+}
+
+/* Detener la animación al pasar el mouse */
+#slider ul:hover {
+    animation-play-state: paused;
+}
