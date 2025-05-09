@@ -7,6 +7,8 @@ html, body {
     background-color: transparent; /* Color de fondo general */
 }
 
+/*comentario de prueba*/
+
 @media (max-width: 768px) {
 
     @font-face {
